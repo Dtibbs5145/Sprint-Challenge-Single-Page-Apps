@@ -3,20 +3,26 @@ import React, { useState } from "react";
 export default function SearchForm(props) {
   const [search, setSearch] = useState({});
 
+  const newSearch = searches => {
+    const addSearch = {
+      id: Date.now()
+    };
+    setSearch([...search, addSearch]);
+  };
+
   const handleChanges = e => {
     setSearch({ ...search, [e.target.name]: e.target.value })
   }
 
   const submitForm = e => {
     e.preventDefault()
-  props.newSearch(search);
+  newSearch(search);
   setSearch({ search: '' });
 }
 return (
   <form onSubmit={submitForm}>
     <label htmlFor='search'>Search</label>
     <input type='text' name='search' onChange={handleChanges} />
-    <button type='submit'>Search</button>
+    <button type='submit'>Search by Name</button>
   </form>
-  // </div>
 )};
