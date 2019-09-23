@@ -19,7 +19,9 @@ export default function LocationsList() {
         <div>
                 <div>
                 {location.map(loc => {
+                    return (
                     <LocationCard key={loc.id} location={location} />
+                    )
                 })}
             </div>
         </div>
