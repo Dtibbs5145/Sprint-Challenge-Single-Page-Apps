@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Header from "./components/Header.js";
-import CharacterCard from './components/CharacterCard';
-import LocationCard from './components/LocationCard';
+import CharacterList from './components/CharacterList';
+// import LocationCard from './components/LocationCard';
 import WelcomePage from './components/WelcomePage';
 import SearchForm from './components/SearchForm';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -27,13 +27,13 @@ export default function App() {
           <li>
             <Link to='/'>Home</Link>
           </li>
-          <li>
-            <Link to='/location'>Locations</Link>
-          </li>
+          {/* <li>
+            {/* <Link to='/location'>Locations</Link> */}
+          {/* </li> */}
         </ul>
-        <Route path='/character' component={CharacterCard} />
+        <Route path='/character' component={CharacterList} />
         <Route exact path='/' component={WelcomePage} />
-        <Route exact path='/location' component={LocationCard} />
+        {/* <Route exact path='/location' component={LocationCard} /> */}
       </Router>
     </main>
   );
